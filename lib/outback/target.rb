@@ -38,14 +38,15 @@ module Outback
     
     def purge_archives
       archives.select do |archive|
-        next if archive.outdated?
-        begin
-          logger.debug "purging archive: #{archive}"
-          unlink_archive!(archive)
-          true
-        rescue => e
-          logger.error "could not unlink archive #{archive}: #{e} #{e.message}"
-          false
+        if archive.outdated?
+          begin
+            logger.debug "purging archive: #{archive}"
+            unlink_archive!(archive)
+            true
+          rescue => e
+            logger.error "could not unlink archive #{archive}: #{e} #{e.message}"
+            false
+          end
         end
       end
     end
