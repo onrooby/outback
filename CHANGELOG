@@ -1,0 +1,29 @@
+*1.0.0 (September 20, 2016)*
+
+* Add SCP target
+* Add encryption with OpenSSL
+* Drop activesupport dependency
+
+*0.0.12 (August 16, 2012)*
+
+* Fix warning caused by methodphitamine.rb
+* Require at least Ruby 1.9.1
+
+*0.0.11 (March 26, 2012)*
+
+* Fix broken tar call, which ignored exclude option
+* Fix exclude file paths
+
+*0.0.9 (March 21, 2012)*
+
+* Removed aws-s3 gem in favour of s3 gem
+* changed bucket to bucket_name in S3 target configuration
+* print line number in case of config errors
+
+*0.0.7 (March 12, 2012)*
+
+* Fixed active_support dependency
+* Improved output
+
+*0.0.6 (January 24, 2012)*
+

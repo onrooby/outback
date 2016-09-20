@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'outback'
+require 'outback/cli'
+
+Outback::CLI.invoke
