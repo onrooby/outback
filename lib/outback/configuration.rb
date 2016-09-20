@@ -26,7 +26,7 @@ module Outback
 
     def initialize(name, &block)
       name = name.to_s
-      raise ConfigurationError, "Illegal configuration name #{name.inspect}" unless name.match(/\A[a-z0-9]+\z/)
+      raise ConfigurationError, "Illegal configuration name #{name.inspect}" unless name.match(/\A[a-z][a-z0-9_\-.]+\z/)
       @name = name
       @sources, @processors, @targets, @errors = [], [], [], []
       if block_given?
