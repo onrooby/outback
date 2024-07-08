@@ -1,0 +1,36 @@
+PATH
+  remote: .
+  specs:
+    outback (1.1.0)
+      base64
+      net-sftp
+      rexml
+      s3 (>= 0.3.24)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.8.7)
+      public_suffix (>= 2.0.2, < 7.0)
+    base64 (0.2.0)
+    net-sftp (4.0.0)
+      net-ssh (>= 5.0.0, < 8.0.0)
+    net-ssh (7.2.3)
+    proxies (0.2.3)
+    public_suffix (6.0.0)
+    rexml (3.3.1)
+      strscan
+    s3 (0.3.29)
+      addressable
+      proxies
+    strscan (3.1.0)
+
+PLATFORMS
+  ruby
+  x86_64-darwin-20
+
+DEPENDENCIES
+  outback!
+
+BUNDLED WITH
+   2.5.9

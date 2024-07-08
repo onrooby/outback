@@ -10,8 +10,9 @@ module Outback
     end
     
     def purge!
-      purged_archives = connect { purge_archives }
-      logger.info "Purged #{purged_archives.size} archives (#{purged_archives.sum(&:size)} bytes) from #{self}"
+      if purged_archives = connect { purge_archives }
+        logger.info "Purged #{purged_archives.size} archives (#{purged_archives.sum(&:size)} bytes) from #{self}"
+      end
     end
     
     private
@@ -33,7 +34,7 @@ module Outback
     end
     
     def archives
-      list_all_archives.select(&it.match?(backup_name))
+      list_all_archives.select(&_it.match?(backup_name))
     end
     
     def purge_archives

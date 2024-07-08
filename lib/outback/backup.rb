@@ -39,11 +39,24 @@ module Outback
     end
     
     def store_archives(archives)
-      targets.each { |target| target.put(archives) }
+      targets.each do |target|
+        begin
+          target.put(archives)
+        rescue => e
+          logger.info "Error while storing to #{target}: #{e.inspect}"
+          0
+        end
+      end
     end
 
     def purge_targets
-      targets.each { |target| target.purge! }
+      targets.each do |target|
+        begin
+          target.purge!
+        rescue => e
+          logger.info "Error while purging #{target}: #{e.inspect}"
+        end
+      end
     end
     
   end

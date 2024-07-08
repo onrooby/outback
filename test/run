@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "outback"
+
+load File.join(File.dirname(__FILE__), 'outback_test.rb')

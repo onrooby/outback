@@ -34,9 +34,9 @@ class Mysql
     # Make Mysql object and connect to mysqld.
     # @param args same as arguments for {#connect}.
     # @return [Mysql]
-    def new(*args)
+    def new(...)
       my = self.init
-      my.connect(*args)
+      my.connect(...)
     end
 
     alias real_connect new
